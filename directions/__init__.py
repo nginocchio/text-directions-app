@@ -28,10 +28,11 @@ def parse_sms(mesg):
         encoded_routes = url_encode(location_tuples)
         json_data = parse_the_response(http_response(encoded_routes))
         steps = Directions().look_up(json_data)
+        # distance = Distance().look_up(json_data)
     
         turn_directions = ""
         for turns in steps:
-            turn_directions += turns + '\n'
+            turn_directions += turns[0] + ' - ' + str(turns[1]) + ' miles' + '\n'
         resp.message(turn_directions)
     return resp
 

@@ -7,7 +7,8 @@ class Directions:
             for d in legs:
                 for diction in d['maneuvers']:
                     #print(diction['narrative'])
-                    directions.append(diction['narrative'])
+                    directions.append((diction['narrative'], diction['distance']))
+                    # distances.append(diction['distance'])
             return directions
 
         except KeyError:
@@ -18,9 +19,10 @@ class Directions:
 class Distance:
     def look_up(self, data):
         try:
-            print('TOTAL DISTANCE: ' + str(round(data['route']['distance'])) + ' mile(s)')
+            # print('TOTAL DISTANCE: ' + str(round(data['route']['distance'])) + ' mile(s)')
+            return str(round(data['route']['distance']))
         except KeyError:
-            print('NO DISTANCE FOUND')
+            return ('NO DISTANCE FOUND')
 
 
 
