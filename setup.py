@@ -7,5 +7,5 @@ setup(
     packages=['text-direction'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=['Flask']
+    install_requires=['Flask', 'requests', 'twilio']
 )
