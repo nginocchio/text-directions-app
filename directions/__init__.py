@@ -3,8 +3,8 @@ import os
 from flask import Flask, request
 from twilio import twiml
 from twilio.twiml.messaging_response import MessagingResponse
-from createmapquestapi import *
-from mapquestclass import *
+from .createmapquestapi import *
+from .mapquestclass import *
 
 def help_message():
     help1 = "'set <home or work>;' will set your home address or work address."
